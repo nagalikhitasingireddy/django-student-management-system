@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: student-management-system
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn sms.wsgi:application"
+    envVars:
+      - key: DEBUG
+        value: False
