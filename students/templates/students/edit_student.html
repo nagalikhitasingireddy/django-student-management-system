@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+
+    <link rel="stylesheet" href="{% static 'students/style.css' %}">
+</head>
+<body>
+
+    <h1>Edit Student</h1>
+<div style="text-align:center; margin-bottom:20px;">
+
+    <a href="{% url 'students:index' %}">
+        <button type="button">Back to Home</button>
+    </a>
+
+</div>
+    <form method="post">
+
+        {% csrf_token %}
+
+        <input type="text" name="name" value="{{ student.name }}"><br><br>
+
+        <input type="text" name="roll_number" value="{{ student.roll_number }}"><br><br>
+
+        <input type="email" name="email" value="{{ student.email }}"><br><br>
+
+        <input type="text" name="course" value="{{ student.course }}"><br><br>
+
+        <input type="number" name="marks" value="{{ student.marks }}"><br><br>
+
+        <button type="submit">Update Student</button>
+
+    </form>
+<hr>
+
+<p style="text-align:center; color:gray;">
+    Built using Django | Student Management System
+</p>
+</body>
+</html>
